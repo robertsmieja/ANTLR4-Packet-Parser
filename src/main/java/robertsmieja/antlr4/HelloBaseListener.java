@@ -1,4 +1,7 @@
-// Generated from robertsmieja\antlr4\Hello.g4 by ANTLR 4.5.1
+// Generated from robertsmieja\antlr4\Hello.g4 by ANTLR 4.6
+
+package robertsmieja.antlr4;
+
 
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;

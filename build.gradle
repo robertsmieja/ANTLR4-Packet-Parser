@@ -10,7 +10,7 @@ repositories {
 }
 
 dependencies {
-	antlr "org.antlr:antlr4:4.6.0"
+	antlr "org.antlr:antlr4:4.6"
 
 	compile 'org.codehaus.groovy:groovy-all:2.4.6'
 
