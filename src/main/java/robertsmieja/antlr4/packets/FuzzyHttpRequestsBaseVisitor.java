@@ -1,4 +1,7 @@
 // Generated from robertsmieja\antlr4\packets\FuzzyHttpRequests.g4 by ANTLR 4.6
+
+package robertsmieja.antlr4.packets;
+
 import org.antlr.v4.runtime.tree.AbstractParseTreeVisitor;
 
 /**
@@ -16,7 +19,7 @@ public class FuzzyHttpRequestsBaseVisitor<T> extends AbstractParseTreeVisitor<T>
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx) { return visitChildren(ctx); }
+	@Override public T visitBinaryFile(FuzzyHttpRequestsParser.BinaryFileContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
@@ -37,6 +40,13 @@ public class FuzzyHttpRequestsBaseVisitor<T> extends AbstractParseTreeVisitor<T>
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
+	@Override public T visitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
 	@Override public T visitHttpUrl(FuzzyHttpRequestsParser.HttpUrlContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
@@ -45,4 +55,11 @@ public class FuzzyHttpRequestsBaseVisitor<T> extends AbstractParseTreeVisitor<T>
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
 	@Override public T visitHttpMethod(FuzzyHttpRequestsParser.HttpMethodContext ctx) { return visitChildren(ctx); }
+	/**
+	 * {@inheritDoc}
+	 *
+	 * <p>The default implementation returns the result of calling
+	 * {@link #visitChildren} on {@code ctx}.</p>
+	 */
+	@Override public T visitHttpVersion(FuzzyHttpRequestsParser.HttpVersionContext ctx) { return visitChildren(ctx); }
 }

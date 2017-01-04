@@ -1,4 +1,7 @@
 // Generated from robertsmieja\antlr4\packets\FuzzyHttpRequests.g4 by ANTLR 4.6
+
+package robertsmieja.antlr4.packets;
+
 import org.antlr.v4.runtime.tree.ParseTreeListener;
 
 /**
@@ -7,15 +10,15 @@ import org.antlr.v4.runtime.tree.ParseTreeListener;
  */
 public interface FuzzyHttpRequestsListener extends ParseTreeListener {
 	/**
-	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#httpRequest}.
+	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#binaryFile}.
 	 * @param ctx the parse tree
 	 */
-	void enterHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
+	void enterBinaryFile(FuzzyHttpRequestsParser.BinaryFileContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuzzyHttpRequestsParser#httpRequest}.
+	 * Exit a parse tree produced by {@link FuzzyHttpRequestsParser#binaryFile}.
 	 * @param ctx the parse tree
 	 */
-	void exitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
+	void exitBinaryFile(FuzzyHttpRequestsParser.BinaryFileContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#binaryJunk}.
 	 * @param ctx the parse tree
@@ -37,6 +40,16 @@ public interface FuzzyHttpRequestsListener extends ParseTreeListener {
 	 */
 	void exitFileExtension(FuzzyHttpRequestsParser.FileExtensionContext ctx);
 	/**
+	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#httpRequest}.
+	 * @param ctx the parse tree
+	 */
+	void enterHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link FuzzyHttpRequestsParser#httpRequest}.
+	 * @param ctx the parse tree
+	 */
+	void exitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
+	/**
 	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#httpUrl}.
 	 * @param ctx the parse tree
 	 */
@@ -56,4 +69,14 @@ public interface FuzzyHttpRequestsListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitHttpMethod(FuzzyHttpRequestsParser.HttpMethodContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#httpVersion}.
+	 * @param ctx the parse tree
+	 */
+	void enterHttpVersion(FuzzyHttpRequestsParser.HttpVersionContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link FuzzyHttpRequestsParser#httpVersion}.
+	 * @param ctx the parse tree
+	 */
+	void exitHttpVersion(FuzzyHttpRequestsParser.HttpVersionContext ctx);
 }

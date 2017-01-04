@@ -35,8 +35,7 @@ public class EthernetFramePrintVisitorTests {
         URL fileUrl = this.getClass().getClassLoader().getResource(fileName);
         assertNotNull(fileUrl);
 
-        File file = new File(fileUrl.getFile());
-        ANTLRInputStream bytesAsChar = new ANTLRInputStream(new FileInputStream(file));
+        ANTLRFileStream bytesAsChar = new ANTLRFileStream(fileUrl.getFile(),"ISO-8859-1");
         EthernetFrameLexer lexer = new EthernetFrameLexer(bytesAsChar);
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         EthernetFrameParser parser = new EthernetFrameParser(tokens);

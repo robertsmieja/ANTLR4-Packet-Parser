@@ -1,4 +1,7 @@
 // Generated from robertsmieja\antlr4\packets\FuzzyHttpRequests.g4 by ANTLR 4.6
+
+package robertsmieja.antlr4.packets;
+
 import org.antlr.v4.runtime.tree.ParseTreeVisitor;
 
 /**
@@ -10,11 +13,11 @@ import org.antlr.v4.runtime.tree.ParseTreeVisitor;
  */
 public interface FuzzyHttpRequestsVisitor<T> extends ParseTreeVisitor<T> {
 	/**
-	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#httpRequest}.
+	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#binaryFile}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
+	T visitBinaryFile(FuzzyHttpRequestsParser.BinaryFileContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#binaryJunk}.
 	 * @param ctx the parse tree
@@ -28,6 +31,12 @@ public interface FuzzyHttpRequestsVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitFileExtension(FuzzyHttpRequestsParser.FileExtensionContext ctx);
 	/**
+	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#httpRequest}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
+	/**
 	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#httpUrl}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
@@ -39,4 +48,10 @@ public interface FuzzyHttpRequestsVisitor<T> extends ParseTreeVisitor<T> {
 	 * @return the visitor result
 	 */
 	T visitHttpMethod(FuzzyHttpRequestsParser.HttpMethodContext ctx);
+	/**
+	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#httpVersion}.
+	 * @param ctx the parse tree
+	 * @return the visitor result
+	 */
+	T visitHttpVersion(FuzzyHttpRequestsParser.HttpVersionContext ctx);
 }

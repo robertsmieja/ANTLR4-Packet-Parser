@@ -13,7 +13,8 @@ ethernetFrame:
     etherType
     payload
     frameCheck
-    interpacketGap;
+    interpacketGap
+    EOF;
 
 preAmble: BYTE_4 BYTE_2 BYTE; //7
 frameDelimiter: BYTE;

@@ -104,6 +104,7 @@ public class EthernetFrameParser extends Parser {
 		public InterpacketGapContext interpacketGap() {
 			return getRuleContext(InterpacketGapContext.class,0);
 		}
+		public TerminalNode EOF() { return getToken(EthernetFrameParser.EOF, 0); }
 		public List<MacAddressContext> macAddress() {
 			return getRuleContexts(MacAddressContext.class);
 		}
@@ -165,6 +166,8 @@ public class EthernetFrameParser extends Parser {
 			frameCheck();
 			setState(28);
 			interpacketGap();
+			setState(29);
+			match(EOF);
 			}
 		}
 		catch (RecognitionException re) {
@@ -207,11 +210,11 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(30);
-			match(BYTE_4);
 			setState(31);
-			match(BYTE_2);
+			match(BYTE_4);
 			setState(32);
+			match(BYTE_2);
+			setState(33);
 			match(BYTE);
 			}
 		}
@@ -253,7 +256,7 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(34);
+			setState(35);
 			match(BYTE);
 			}
 		}
@@ -295,7 +298,7 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(36);
+			setState(37);
 			match(BYTE_4);
 			}
 		}
@@ -337,7 +340,7 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(38);
+			setState(39);
 			match(BYTE_4);
 			}
 		}
@@ -379,7 +382,7 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(40);
+			setState(41);
 			match(BYTE_2);
 			}
 		}
@@ -425,17 +428,17 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(45);
+			setState(46);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
 			while (_la==BYTE) {
 				{
 				{
-				setState(42);
+				setState(43);
 				match(BYTE);
 				}
 				}
-				setState(47);
+				setState(48);
 				_errHandler.sync(this);
 				_la = _input.LA(1);
 			}
@@ -479,7 +482,7 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(48);
+			setState(49);
 			match(BYTE_4);
 			}
 		}
@@ -521,7 +524,7 @@ public class EthernetFrameParser extends Parser {
 		try {
 			enterOuterAlt(_localctx, 1);
 			{
-			setState(50);
+			setState(51);
 			match(BYTE_12);
 			}
 		}
@@ -537,19 +540,19 @@ public class EthernetFrameParser extends Parser {
 	}
 
 	public static final String _serializedATN =
-		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\6\67\4\2\t\2\4\3"+
-		"\t\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\3\2\3\2\3"+
-		"\2\3\2\3\2\5\2\32\n\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\4\3\4\3\5"+
-		"\3\5\3\6\3\6\3\7\3\7\3\b\7\b.\n\b\f\b\16\b\61\13\b\3\t\3\t\3\n\3\n\3\n"+
-		"\2\2\13\2\4\6\b\n\f\16\20\22\2\2/\2\24\3\2\2\2\4 \3\2\2\2\6$\3\2\2\2\b"+
-		"&\3\2\2\2\n(\3\2\2\2\f*\3\2\2\2\16/\3\2\2\2\20\62\3\2\2\2\22\64\3\2\2"+
-		"\2\24\25\5\4\3\2\25\26\5\6\4\2\26\27\5\b\5\2\27\31\5\b\5\2\30\32\5\n\6"+
-		"\2\31\30\3\2\2\2\31\32\3\2\2\2\32\33\3\2\2\2\33\34\5\f\7\2\34\35\5\16"+
-		"\b\2\35\36\5\20\t\2\36\37\5\22\n\2\37\3\3\2\2\2 !\7\4\2\2!\"\7\5\2\2\""+
-		"#\7\6\2\2#\5\3\2\2\2$%\7\6\2\2%\7\3\2\2\2&\'\7\4\2\2\'\t\3\2\2\2()\7\4"+
-		"\2\2)\13\3\2\2\2*+\7\5\2\2+\r\3\2\2\2,.\7\6\2\2-,\3\2\2\2.\61\3\2\2\2"+
-		"/-\3\2\2\2/\60\3\2\2\2\60\17\3\2\2\2\61/\3\2\2\2\62\63\7\4\2\2\63\21\3"+
-		"\2\2\2\64\65\7\3\2\2\65\23\3\2\2\2\4\31/";
+		"\3\u0430\ud6d1\u8206\uad2d\u4417\uaef1\u8d80\uaadd\3\68\4\2\t\2\4\3\t"+
+		"\3\4\4\t\4\4\5\t\5\4\6\t\6\4\7\t\7\4\b\t\b\4\t\t\t\4\n\t\n\3\2\3\2\3\2"+
+		"\3\2\3\2\5\2\32\n\2\3\2\3\2\3\2\3\2\3\2\3\2\3\3\3\3\3\3\3\3\3\4\3\4\3"+
+		"\5\3\5\3\6\3\6\3\7\3\7\3\b\7\b/\n\b\f\b\16\b\62\13\b\3\t\3\t\3\n\3\n\3"+
+		"\n\2\2\13\2\4\6\b\n\f\16\20\22\2\2\60\2\24\3\2\2\2\4!\3\2\2\2\6%\3\2\2"+
+		"\2\b\'\3\2\2\2\n)\3\2\2\2\f+\3\2\2\2\16\60\3\2\2\2\20\63\3\2\2\2\22\65"+
+		"\3\2\2\2\24\25\5\4\3\2\25\26\5\6\4\2\26\27\5\b\5\2\27\31\5\b\5\2\30\32"+
+		"\5\n\6\2\31\30\3\2\2\2\31\32\3\2\2\2\32\33\3\2\2\2\33\34\5\f\7\2\34\35"+
+		"\5\16\b\2\35\36\5\20\t\2\36\37\5\22\n\2\37 \7\2\2\3 \3\3\2\2\2!\"\7\4"+
+		"\2\2\"#\7\5\2\2#$\7\6\2\2$\5\3\2\2\2%&\7\6\2\2&\7\3\2\2\2\'(\7\4\2\2("+
+		"\t\3\2\2\2)*\7\4\2\2*\13\3\2\2\2+,\7\5\2\2,\r\3\2\2\2-/\7\6\2\2.-\3\2"+
+		"\2\2/\62\3\2\2\2\60.\3\2\2\2\60\61\3\2\2\2\61\17\3\2\2\2\62\60\3\2\2\2"+
+		"\63\64\7\4\2\2\64\21\3\2\2\2\65\66\7\3\2\2\66\23\3\2\2\2\4\31\60";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {
