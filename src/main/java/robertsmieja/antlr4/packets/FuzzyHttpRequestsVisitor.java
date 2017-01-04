@@ -37,11 +37,11 @@ public interface FuzzyHttpRequestsVisitor<T> extends ParseTreeVisitor<T> {
 	 */
 	T visitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
 	/**
-	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#httpUrl}.
+	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#httpPath}.
 	 * @param ctx the parse tree
 	 * @return the visitor result
 	 */
-	T visitHttpUrl(FuzzyHttpRequestsParser.HttpUrlContext ctx);
+	T visitHttpPath(FuzzyHttpRequestsParser.HttpPathContext ctx);
 	/**
 	 * Visit a parse tree produced by {@link FuzzyHttpRequestsParser#httpMethod}.
 	 * @param ctx the parse tree

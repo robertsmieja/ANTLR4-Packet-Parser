@@ -6,7 +6,7 @@ import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.RecognitionException;
 import org.antlr.v4.runtime.Recognizer;
 
-public class Antlr4ErrorListener extends BaseErrorListener {
+public class Antlr4BinaryErrorListener extends BaseErrorListener {
     public enum Location {
         UNKNOWN("UNKNOWN"),
         LEXER("LEXER"),
@@ -21,7 +21,7 @@ public class Antlr4ErrorListener extends BaseErrorListener {
 
     Location location = Location.UNKNOWN;
 
-    public Antlr4ErrorListener(Location location) {
+    public Antlr4BinaryErrorListener(Location location) {
         this.location = location;
     }
 

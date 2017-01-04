@@ -19,24 +19,25 @@ public class FuzzyHttpRequestsParser extends Parser {
 	protected static final PredictionContextCache _sharedContextCache =
 		new PredictionContextCache();
 	public static final int
-		DOT=1, DIGIT=2, FORWARD_SLASH=3, LETTER=4, HTTP=5, HTTP_GET=6, HTTP_DELETE=7, 
-		HTTP_POST=8, HTTP_PUT=9, SPACE=10, VERSION_NUMBER=11, WORD=12, WS=13, 
-		BYTE=14;
+		DOT=1, DIGIT=2, FORWARD_SLASH=3, LETTER=4, HTTP_GET=5, HTTP_DELETE=6, 
+		HTTP_POST=7, HTTP_PUT=8, SPACE=9, VERSION_NUMBER=10, WORD=11, WS=12, BYTE=13, 
+		HTTP=14;
 	public static final int
 		RULE_binaryFile = 0, RULE_binaryJunk = 1, RULE_fileExtension = 2, RULE_httpRequest = 3, 
-		RULE_httpUrl = 4, RULE_httpMethod = 5, RULE_httpVersion = 6;
+		RULE_httpPath = 4, RULE_httpMethod = 5, RULE_httpVersion = 6;
 	public static final String[] ruleNames = {
-		"binaryFile", "binaryJunk", "fileExtension", "httpRequest", "httpUrl", 
+		"binaryFile", "binaryJunk", "fileExtension", "httpRequest", "httpPath", 
 		"httpMethod", "httpVersion"
 	};
 
 	private static final String[] _LITERAL_NAMES = {
-		null, "'.'", null, "'/'", null, "'HTTP'", "'GET'", "'DELETE'", "'POST'", 
-		"'PUT'", "' '"
+		null, "'.'", null, "'/'", null, "'GET'", "'DELETE'", "'POST'", "'PUT'", 
+		"' '"
 	};
 	private static final String[] _SYMBOLIC_NAMES = {
-		null, "DOT", "DIGIT", "FORWARD_SLASH", "LETTER", "HTTP", "HTTP_GET", "HTTP_DELETE", 
-		"HTTP_POST", "HTTP_PUT", "SPACE", "VERSION_NUMBER", "WORD", "WS", "BYTE"
+		null, "DOT", "DIGIT", "FORWARD_SLASH", "LETTER", "HTTP_GET", "HTTP_DELETE", 
+		"HTTP_POST", "HTTP_PUT", "SPACE", "VERSION_NUMBER", "WORD", "WS", "BYTE", 
+		"HTTP"
 	};
 	public static final Vocabulary VOCABULARY = new VocabularyImpl(_LITERAL_NAMES, _SYMBOLIC_NAMES);
 
@@ -310,8 +311,8 @@ public class FuzzyHttpRequestsParser extends Parser {
 		public HttpMethodContext httpMethod() {
 			return getRuleContext(HttpMethodContext.class,0);
 		}
-		public HttpUrlContext httpUrl() {
-			return getRuleContext(HttpUrlContext.class,0);
+		public HttpPathContext httpPath() {
+			return getRuleContext(HttpPathContext.class,0);
 		}
 		public HttpVersionContext httpVersion() {
 			return getRuleContext(HttpVersionContext.class,0);
@@ -359,7 +360,7 @@ public class FuzzyHttpRequestsParser extends Parser {
 			}
 
 			setState(37);
-			httpUrl();
+			httpPath();
 			setState(39);
 			_errHandler.sync(this);
 			_la = _input.LA(1);
@@ -385,7 +386,7 @@ public class FuzzyHttpRequestsParser extends Parser {
 		return _localctx;
 	}
 
-	public static class HttpUrlContext extends ParserRuleContext {
+	public static class HttpPathContext extends ParserRuleContext {
 		public List<TerminalNode> FORWARD_SLASH() { return getTokens(FuzzyHttpRequestsParser.FORWARD_SLASH); }
 		public TerminalNode FORWARD_SLASH(int i) {
 			return getToken(FuzzyHttpRequestsParser.FORWARD_SLASH, i);
@@ -397,28 +398,28 @@ public class FuzzyHttpRequestsParser extends Parser {
 		public FileExtensionContext fileExtension() {
 			return getRuleContext(FileExtensionContext.class,0);
 		}
-		public HttpUrlContext(ParserRuleContext parent, int invokingState) {
+		public HttpPathContext(ParserRuleContext parent, int invokingState) {
 			super(parent, invokingState);
 		}
-		@Override public int getRuleIndex() { return RULE_httpUrl; }
+		@Override public int getRuleIndex() { return RULE_httpPath; }
 		@Override
 		public void enterRule(ParseTreeListener listener) {
-			if ( listener instanceof FuzzyHttpRequestsListener ) ((FuzzyHttpRequestsListener)listener).enterHttpUrl(this);
+			if ( listener instanceof FuzzyHttpRequestsListener ) ((FuzzyHttpRequestsListener)listener).enterHttpPath(this);
 		}
 		@Override
 		public void exitRule(ParseTreeListener listener) {
-			if ( listener instanceof FuzzyHttpRequestsListener ) ((FuzzyHttpRequestsListener)listener).exitHttpUrl(this);
+			if ( listener instanceof FuzzyHttpRequestsListener ) ((FuzzyHttpRequestsListener)listener).exitHttpPath(this);
 		}
 		@Override
 		public <T> T accept(ParseTreeVisitor<? extends T> visitor) {
-			if ( visitor instanceof FuzzyHttpRequestsVisitor ) return ((FuzzyHttpRequestsVisitor<? extends T>)visitor).visitHttpUrl(this);
+			if ( visitor instanceof FuzzyHttpRequestsVisitor ) return ((FuzzyHttpRequestsVisitor<? extends T>)visitor).visitHttpPath(this);
 			else return visitor.visitChildren(this);
 		}
 	}
 
-	public final HttpUrlContext httpUrl() throws RecognitionException {
-		HttpUrlContext _localctx = new HttpUrlContext(_ctx, getState());
-		enterRule(_localctx, 8, RULE_httpUrl);
+	public final HttpPathContext httpPath() throws RecognitionException {
+		HttpPathContext _localctx = new HttpPathContext(_ctx, getState());
+		enterRule(_localctx, 8, RULE_httpPath);
 		int _la;
 		try {
 			enterOuterAlt(_localctx, 1);
@@ -582,18 +583,18 @@ public class FuzzyHttpRequestsParser extends Parser {
 		"\r\2\16\2\26\3\2\3\2\3\3\7\3\34\n\3\f\3\16\3\37\13\3\3\4\3\4\3\4\3\5\3"+
 		"\5\5\5&\n\5\3\5\3\5\5\5*\n\5\3\5\3\5\3\6\3\6\5\6\60\n\6\3\6\3\6\7\6\64"+
 		"\n\6\f\6\16\6\67\13\6\3\6\5\6:\n\6\3\7\3\7\3\b\3\b\3\b\3\b\3\b\3\35\2"+
-		"\t\2\4\6\b\n\f\16\2\4\4\2\3\6\f\20\3\2\b\13A\2\20\3\2\2\2\4\35\3\2\2\2"+
+		"\t\2\4\6\b\n\f\16\2\4\4\2\3\6\13\17\3\2\7\nA\2\20\3\2\2\2\4\35\3\2\2\2"+
 		"\6 \3\2\2\2\b#\3\2\2\2\n-\3\2\2\2\f;\3\2\2\2\16=\3\2\2\2\20\24\5\4\3\2"+
 		"\21\22\5\b\5\2\22\23\5\4\3\2\23\25\3\2\2\2\24\21\3\2\2\2\25\26\3\2\2\2"+
 		"\26\24\3\2\2\2\26\27\3\2\2\2\27\30\3\2\2\2\30\31\7\2\2\3\31\3\3\2\2\2"+
 		"\32\34\t\2\2\2\33\32\3\2\2\2\34\37\3\2\2\2\35\36\3\2\2\2\35\33\3\2\2\2"+
-		"\36\5\3\2\2\2\37\35\3\2\2\2 !\7\3\2\2!\"\7\16\2\2\"\7\3\2\2\2#%\5\f\7"+
-		"\2$&\7\f\2\2%$\3\2\2\2%&\3\2\2\2&\'\3\2\2\2\')\5\n\6\2(*\7\f\2\2)(\3\2"+
-		"\2\2)*\3\2\2\2*+\3\2\2\2+,\5\16\b\2,\t\3\2\2\2-/\7\5\2\2.\60\7\16\2\2"+
-		"/.\3\2\2\2/\60\3\2\2\2\60\65\3\2\2\2\61\62\7\5\2\2\62\64\7\16\2\2\63\61"+
+		"\36\5\3\2\2\2\37\35\3\2\2\2 !\7\3\2\2!\"\7\r\2\2\"\7\3\2\2\2#%\5\f\7\2"+
+		"$&\7\13\2\2%$\3\2\2\2%&\3\2\2\2&\'\3\2\2\2\')\5\n\6\2(*\7\13\2\2)(\3\2"+
+		"\2\2)*\3\2\2\2*+\3\2\2\2+,\5\16\b\2,\t\3\2\2\2-/\7\5\2\2.\60\7\r\2\2/"+
+		".\3\2\2\2/\60\3\2\2\2\60\65\3\2\2\2\61\62\7\5\2\2\62\64\7\r\2\2\63\61"+
 		"\3\2\2\2\64\67\3\2\2\2\65\63\3\2\2\2\65\66\3\2\2\2\669\3\2\2\2\67\65\3"+
 		"\2\2\28:\5\6\4\298\3\2\2\29:\3\2\2\2:\13\3\2\2\2;<\t\3\2\2<\r\3\2\2\2"+
-		"=>\7\7\2\2>?\7\5\2\2?@\7\r\2\2@\17\3\2\2\2\t\26\35%)/\659";
+		"=>\7\20\2\2>?\7\5\2\2?@\7\f\2\2@\17\3\2\2\2\t\26\35%)/\659";
 	public static final ATN _ATN =
 		new ATNDeserializer().deserialize(_serializedATN.toCharArray());
 	static {

@@ -66,13 +66,13 @@ public class FuzzyHttpRequestsBaseListener implements FuzzyHttpRequestsListener 
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterHttpUrl(FuzzyHttpRequestsParser.HttpUrlContext ctx) { }
+	@Override public void enterHttpPath(FuzzyHttpRequestsParser.HttpPathContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitHttpUrl(FuzzyHttpRequestsParser.HttpUrlContext ctx) { }
+	@Override public void exitHttpPath(FuzzyHttpRequestsParser.HttpPathContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *

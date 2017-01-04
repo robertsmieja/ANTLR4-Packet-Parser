@@ -1,15 +1,12 @@
 package robertsmieja.antlr4.packets;
 
 import org.antlr.v4.runtime.ANTLRFileStream;
-import org.antlr.v4.runtime.ANTLRInputStream;
 import org.antlr.v4.runtime.CommonTokenStream;
 import org.antlr.v4.runtime.tree.ParseTree;
 import org.junit.Before;
 import org.junit.Test;
-import robertsmieja.antlr4.util.Antlr4ErrorListener;
+import robertsmieja.antlr4.util.Antlr4BinaryErrorListener;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.URL;
 
@@ -40,12 +37,11 @@ public class FuzzyHttpRequestsPrintVisitorTests {
         assertNotNull(fileUrl);
 
         ANTLRFileStream bytesAsChar = new ANTLRFileStream(fileUrl.getFile());
-//        ANTLRFileStream bytesAsChar = new ANTLRFileStream(fileUrl.getFile(),"ISO-8859-1");
         FuzzyHttpRequestsLexer lexer = new FuzzyHttpRequestsLexer(bytesAsChar);
-        lexer.addErrorListener(new Antlr4ErrorListener(Antlr4ErrorListener.Location.LEXER));
+        lexer.addErrorListener(new Antlr4BinaryErrorListener(Antlr4BinaryErrorListener.Location.LEXER));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         FuzzyHttpRequestsParser parser = new FuzzyHttpRequestsParser(tokens);
-        parser.addErrorListener(new Antlr4ErrorListener(Antlr4ErrorListener.Location.PARSER));
+        parser.addErrorListener(new Antlr4BinaryErrorListener(Antlr4BinaryErrorListener.Location.PARSER));
         ParseTree tree = parser.binaryFile();
 
         return tree;

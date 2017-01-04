@@ -50,15 +50,15 @@ public interface FuzzyHttpRequestsListener extends ParseTreeListener {
 	 */
 	void exitHttpRequest(FuzzyHttpRequestsParser.HttpRequestContext ctx);
 	/**
-	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#httpUrl}.
+	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#httpPath}.
 	 * @param ctx the parse tree
 	 */
-	void enterHttpUrl(FuzzyHttpRequestsParser.HttpUrlContext ctx);
+	void enterHttpPath(FuzzyHttpRequestsParser.HttpPathContext ctx);
 	/**
-	 * Exit a parse tree produced by {@link FuzzyHttpRequestsParser#httpUrl}.
+	 * Exit a parse tree produced by {@link FuzzyHttpRequestsParser#httpPath}.
 	 * @param ctx the parse tree
 	 */
-	void exitHttpUrl(FuzzyHttpRequestsParser.HttpUrlContext ctx);
+	void exitHttpPath(FuzzyHttpRequestsParser.HttpPathContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link FuzzyHttpRequestsParser#httpMethod}.
 	 * @param ctx the parse tree

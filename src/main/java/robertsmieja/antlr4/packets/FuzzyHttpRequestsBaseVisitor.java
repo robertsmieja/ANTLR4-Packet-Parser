@@ -47,7 +47,7 @@ public class FuzzyHttpRequestsBaseVisitor<T> extends AbstractParseTreeVisitor<T>
 	 * <p>The default implementation returns the result of calling
 	 * {@link #visitChildren} on {@code ctx}.</p>
 	 */
-	@Override public T visitHttpUrl(FuzzyHttpRequestsParser.HttpUrlContext ctx) { return visitChildren(ctx); }
+	@Override public T visitHttpPath(FuzzyHttpRequestsParser.HttpPathContext ctx) { return visitChildren(ctx); }
 	/**
 	 * {@inheritDoc}
 	 *
