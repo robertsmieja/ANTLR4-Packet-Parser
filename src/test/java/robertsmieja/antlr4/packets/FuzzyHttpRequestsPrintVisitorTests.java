@@ -38,10 +38,12 @@ public class FuzzyHttpRequestsPrintVisitorTests {
 
         ANTLRFileStream bytesAsChar = new ANTLRFileStream(fileUrl.getFile());
         FuzzyHttpRequestsLexer lexer = new FuzzyHttpRequestsLexer(bytesAsChar);
-        lexer.addErrorListener(new Antlr4BinaryErrorListener(Antlr4BinaryErrorListener.Location.LEXER));
+        lexer.removeErrorListeners();
+//        lexer.addErrorListener(new Antlr4BinaryErrorListener(Antlr4BinaryErrorListener.Location.LEXER));
         CommonTokenStream tokens = new CommonTokenStream(lexer);
         FuzzyHttpRequestsParser parser = new FuzzyHttpRequestsParser(tokens);
-        parser.addErrorListener(new Antlr4BinaryErrorListener(Antlr4BinaryErrorListener.Location.PARSER));
+        parser.removeErrorListeners();
+//        parser.addErrorListener(new Antlr4BinaryErrorListener(Antlr4BinaryErrorListener.Location.PARSER));
         ParseTree tree = parser.binaryFile();
 
         return tree;
